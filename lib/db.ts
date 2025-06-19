@@ -1,17 +1,15 @@
-
 import mongoose from "mongoose";
 
-const MONGODB_URL = process.env. DB_URL!
+const MONGODB_URL = process.env.DB_URL!;
 
-if(!MONGODB_URL) {
-    throw new Error("please define MONGODB_UR")
+if (!MONGODB_URL) {
+  throw new Error("please define MONGODB_UR");
 }
 
 let cached = global.mongoose;
 
-
 if (!cached) {
-    cached = global.mongoose = {conn : null, promise : null}
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
 export async function connectToDatabase() {
