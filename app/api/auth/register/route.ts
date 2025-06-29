@@ -35,6 +35,7 @@ export async function POST(request:NextRequest) {
       )
 
     } catch (error) {
+         console.error("registartion error", error)
         return NextResponse.json(
             {error : "server error"},
             {status : 400}
